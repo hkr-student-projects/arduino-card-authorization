@@ -2,8 +2,8 @@
 #include "app.hh"
 #include "keypad.hh"
 
-const String card_password = "1234";
-const String card_uid = "A4 13 09 55";
+const String card_password = "8255";
+const String card_uid = "DE D3 4D C4";
 String input_password;
 
 void setup()
@@ -82,7 +82,7 @@ void authorizeAccess() {
       Serial.println("Authorized access. Password accepted.");
     }
     else {
-      Serial.println("Access denied. Reason: Incorrect password for card.");
+      Serial.println(String("Access denied. Reason: Incorrect password for card: " + card_uid));
     }
     delay(3000);
   }
