@@ -15,6 +15,7 @@ void setup()
   Serial.println("Approximate your card to the reader...");
   Serial.println();
 }
+
 void loop()
 { 
   authorizeAccess();
@@ -52,16 +53,16 @@ bool checkPassword() {
 }
 
 void authorizeAccess() {
-    // Look for new cards
-  if (!mfrc522.PICC_IsNewCardPresent())
-  {
-    return;
-  }
-  // Select one of the cards
-  if (!mfrc522.PICC_ReadCardSerial())
-  {
-    return;
-  }
+//    // Look for new cards
+//  if (!mfrc522.PICC_IsNewCardPresent())
+//  {
+//    return;
+//  }
+//  // Select one of the cards
+//  if (!mfrc522.PICC_ReadCardSerial())
+//  {
+//    return;
+//  }
   //Show UID on serial monitor
   Serial.print("\nUID tag :");
   String content = "";
