@@ -98,10 +98,12 @@ void authorizeAccess() {
     if(responseCode == "406" || responseCode == "401") {// card with such UUID was not found
         //flash RED light
         Serial.print(String("Flashing RED light to indicate error."));
+        Serial.print(String("/led red")); 
     }
     else if(responseCode == "202") {
         //flash YELLOW light
         Serial.println(String("Flashing YELLOW light to indicate that password needed.")); 
+        Serial.print(String("/led yellow")); 
         String password = getPassword();
         Serial.print(String("/password " + last_uuid + " " + password)); 
     }
@@ -109,6 +111,7 @@ void authorizeAccess() {
         //flash GREEN light
         //trigger some engine to open door/gate/smth...
         Serial.print(String("Flashing GREEN light to indicate successful authorization."));  
+        Serial.print(String("/led green")); 
     }
 
     return;
